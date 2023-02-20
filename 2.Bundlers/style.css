@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(118, 19, 42);
+    color: #fff;
+}
+#para{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}

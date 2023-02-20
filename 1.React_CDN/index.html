@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <!--? Render Hello world With HTML  -->
+    <!-- <h1>Hello World from HTML.</h1> -->
+    <div id="root">Not Renderd</div>
+
+    <!--? Render Hello world With JS -->
+    <!-- <script>
+      const heading = document.createElement("h1");
+      heading.innerText = "Hello World from JS.";
+      const root = document.getElementById("root");
+      document.getElementById("root").appendChild(heading);
+    </script> -->
+
+    <!--? Render Hello world With react CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+      // Render single React Element
+      // const heading = React.createElement("h1", {}, "Hello World from React");
+      // const root = ReactDOM.createRoot(document.getElementById("root"));
+      // console.log(heading);
+      // root.render(heading)
+
+      // Nested React elements
+      const heading1 = React.createElement(
+        "h1",
+        { id: "heading" },
+        "Hello World 1"
+      );
+      const heading2 = React.createElement(
+        "h1",
+        { id: "heading" },
+        "Hello World 2"
+      );
+      const container = React.createElement("div", { id: "container" }, [
+        heading1,
+        heading2,
+      ]);
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(container);
+    </script>
+  </body>
+</html>
