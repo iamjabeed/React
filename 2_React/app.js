@@ -1895,9 +1895,8 @@ const Body = () => {
   return (
     <div className="restaurent-card-List">
       {RestaurentList.map((restaurent) => {
-         return <RestaurentCard key={restaurent.data.id} {...restaurent.data} />
-       })
-      }
+        return <RestaurentCard key={restaurent.data.id} {...restaurent.data} />;
+      })}
       {/* <RestaurentCard {...RestaurentList[0].data} />
       <RestaurentCard {...RestaurentList[1].data} />
       <RestaurentCard {...RestaurentList[2].data} />
@@ -1917,12 +1916,21 @@ const Body = () => {
   );
 };
 
+const Footer = () => {
+  return (
+    <div className="footer">
+      <h2>Made with love by Jabeed</h2>
+      <p>© Copyright, Jaddu</p>
+    </div>
+  );
+};
+
 const AppLayout = () => {
   return (
     <>
       <Header />
       <Body />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
