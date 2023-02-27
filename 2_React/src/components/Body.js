@@ -1,6 +1,8 @@
 import { RestaurentList } from "./constants";
 import IMG_URL_CDN from "./constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
+
 const RestaurentCard = ({
   cloudinaryImageId,
   name,
@@ -33,9 +35,32 @@ function filterData(searchText, restaurants) {
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(RestaurentList);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [allrestaurants, setAllRestaurants] = useState([]);
+  // const [restaurants, setRestaurants] = useState([RestaurentList]);
 
-  return (
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9165757&lng=77.6101163&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
+    //* Initial filtered reastaurants are all the restaurents
+    setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
+  }
+
+  if (!allrestaurants) return null; //*Not rendered components(Early return)
+
+  if (filteredRestaurants?.length === 0)
+    return <h1>No restaurant found with your search</h1>;
+
+  return allrestaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <input
         type="text"
@@ -48,16 +73,16 @@ const Body = () => {
         className="search-btn"
         onClick={() => {
           // filter the data
-          const data = filterData(searchText, restaurants);
+          const data = filterData(searchText, allrestaurants);
           // update the state of restaurants list
-          setRestaurants(data);
+          setFilteredRestaurants(data);
         }}
       >
         Search
       </button>
 
       <div className="restaurent-card-List">
-        {restaurants.map((restaurent) => {
+        {filteredRestaurants.map((restaurent) => {
           return (
             <RestaurentCard key={restaurent.data.id} {...restaurent.data} />
           );
