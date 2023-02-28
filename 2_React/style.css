@@ -1,16 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #212426;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem;
-    padding: 0 10px;
-    border: 1px solid black;
+    padding: 0 1rem;
+    /* padding: 0 8px; */
+    /* border: 1px solid black; */
+}
+
+.login .login-btn {
+    padding: 8px 15px;
+    background-color: rgba(164, 45, 45, 0.877);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-family: "Roboto Slab", serif;
+    cursor: pointer;
+    transition: .3s background-color ease-in-out;
+    border-radius: 4px;
+}
+
+.login .login-btn:hover {
+    background-color: rgba(227, 29, 29, 0.877);
 }
 
 .logo {
@@ -28,28 +51,83 @@
     list-style: none;
     font-size: 18px;
     text-transform: capitalize;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1f1f1f;
+    font-family: "Roboto Slab", serif;
+    /* color: #ffffff; */
+    color: #a1a1a1;
     font-weight: 500;
     cursor: pointer;
     transition: color .5s ease-in-out;
 }
 
-.nav-items ul li:hover {
-    color: orangered;
+.search_section {
+
+    width: 80%;
+    margin: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    border-radius: 3rem;
+    background: #1f2123;
+    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+}
+
+.search_section input {
+
+    flex: 1;
+    border: none;
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    /* padding-right: 1rem; */
+
+    outline: none;
+    color: #a1a1a1;
+    background: #1f2123;
+}
+
+.search_section .search-btn {
+    padding: 8px 20px;
+    border-radius: 0.5rem;
+    margin-left: 15px;
+    color: #a1a1a1;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.75px;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    /* background: #1f2123; */
+    background: transparent;
+    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
 
 .restaurent-card {
-    width: 240px;
-    height: 280px;
+    width: 200px;
+    height: 260px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    /* border: 1px solid black; */
+    font-family: "Raleway", sans-serif;
+    /* color: #fff; */
+    color: #a1a1a1;
+    background-color: #1f2123;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    /* border: 1px solid rgb(255, 255, 255); */
+}
+
+.restaurent-card:hover {
+    /* transform: scale(1.1); */
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
 }
 
 .restaurent-card img {
     width: 100%;
+    object-fit: cover;
 }
 
 .restaurent-card h3 {
@@ -80,7 +158,7 @@
 }
 
 .footer {
-    background-color: rgb(32, 58, 137);
+    background-color: #1f2123;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -91,10 +169,17 @@
 
 .footer h2 {
     color: rgb(255, 255, 255);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 .footer p {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Raleway", sans-serif;
+}
+
+.shimmer {
+    margin-top: 4rem;
+    width: 200px;
+    height: 240px;
+    background-color: #1f2123;
 }

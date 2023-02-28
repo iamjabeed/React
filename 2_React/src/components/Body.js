@@ -21,7 +21,6 @@ const RestaurentCard = ({
         <h4>{avgRating} ★</h4>
         <h4>{locality}</h4>
       </div>
-      <hr />
     </div>
   );
 };
@@ -55,14 +54,15 @@ const Body = () => {
 
   if (!allrestaurants) return null; //*Not rendered components(Early return)
 
-  if (filteredRestaurants?.length === 0)
-    return <h1>No restaurant found with your search</h1>;
+  // if (filteredRestaurants?.length === 0)
+  // return <h1>No restaurant found with your search</h1>;
 
   return allrestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <input
+    <div className="search_section">
+    <input
         type="text"
         className="search-input"
         placeholder="Search a restaurant you want..."
@@ -80,11 +80,11 @@ const Body = () => {
       >
         Search
       </button>
-
+    </div>
       <div className="restaurent-card-List">
         {filteredRestaurants.map((restaurent) => {
           return (
-            <RestaurentCard key={restaurent.data.id} {...restaurent.data} />
+            <RestaurentCard {...restaurent.data} key={restaurent.data.id} />
           );
         })}
       </div>
