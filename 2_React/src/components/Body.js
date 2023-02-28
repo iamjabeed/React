@@ -3,6 +3,7 @@ import IMG_URL_CDN from "./constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
+
 const RestaurentCard = ({
   cloudinaryImageId,
   name,
@@ -61,26 +62,26 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-    <div className="search_section">
-    <input
-        type="text"
-        className="search-input"
-        placeholder="Search a restaurant you want..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      ></input>
-      <button
-        className="search-btn"
-        onClick={() => {
-          // filter the data
-          const data = filterData(searchText, allrestaurants);
-          // update the state of restaurants list
-          setFilteredRestaurants(data);
-        }}
-      >
-        Search
-      </button>
-    </div>
+      <div className="search_section">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search a restaurant you want..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        ></input>
+        <button
+          className="search-btn"
+          onClick={() => {
+            // filter the data
+            const data = filterData(searchText, allrestaurants);
+            // update the state of restaurants list
+            setFilteredRestaurants(data);
+          }}
+        >
+          Search
+        </button>
+      </div>
       <div className="restaurent-card-List">
         {filteredRestaurants.map((restaurent) => {
           return (

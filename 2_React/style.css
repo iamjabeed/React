@@ -181,5 +181,26 @@ body {
     margin-top: 4rem;
     width: 200px;
     height: 240px;
-    background-color: #1f2123;
+    background-color: #45494b;
+    border-radius: 6px;
+}
+
+.route-error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    height: 100vh;
+}
+.route-error-page h1,h2{
+    font-family: "Raleway", sans-serif;
+}
+.route-error-page h2 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.route-error-page h1 {
+    font-size: 2rem;
 }
