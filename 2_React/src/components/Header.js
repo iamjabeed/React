@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => {
   return (
@@ -6,7 +7,7 @@ const Title = () => {
       <a href="/">
         <img
           className="logo"
-          src="https://static.vecteezy.com/system/resources/previews/006/735/689/original/vintage-grilled-barbecue-logo-retro-bbq-fire-grill-food-and-restaurant-icon-red-fire-icon-free-vector.jpg"
+          src="https://cdn2.vectorstock.com/i/1000x1000/02/26/hot-grill-logo-design-vector-36330226.jpg"
           alt="logo"
         />
       </a>
@@ -17,9 +18,15 @@ const NavItems = () => {
   return (
     <div className="nav-items">
       <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact Us</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
+        </li>
         <li>Cart</li>
       </ul>
     </div>

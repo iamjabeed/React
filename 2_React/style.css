@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 1rem;
     /* padding: 0 8px; */
     /* border: 1px solid black; */
 }
@@ -37,7 +37,7 @@ body {
 }
 
 .logo {
-    width: 100px;
+    height: 120px;
     border-radius: 50%;
     /* border: 1px solid black; */
 }
@@ -60,67 +60,70 @@ body {
 }
 
 .search_section {
-
-    width: 80%;
-    margin: 4rem;
-
+    /* border: 1px solid white; */
+    margin: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 1rem;
-    border-radius: 3rem;
-    background: #1f2123;
-    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
 
 .search_section input {
-
     flex: 1;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    /* padding-right: 1rem; */
-
     outline: none;
     color: #a1a1a1;
-    background: #1f2123;
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.277);
 }
 
 .search_section .search-btn {
-    padding: 8px 20px;
-    border-radius: 0.5rem;
+    padding: 10px 20px;
+    border-radius: 2px;
     margin-left: 15px;
-    color: #a1a1a1;
+    color: #ffffff;
+    transition: .2s background ease-in-out;
+    background: #17a4d6;
     font-family: "Raleway", sans-serif;
     font-weight: 900;
     letter-spacing: 0.75px;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    /* background: #1f2123; */
-    background: transparent;
-    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.277);
+}
+
+.search_section .search-btn:hover {
+    background: #2193bc;
+}
+
+.restaurent-card-List {
+    /* border: 1px solid red; */
+    padding: 1rem;
+}
+
+.restaurent-card .restaurant-details {
+    padding: 10px;
 }
 
 .restaurent-card {
-    width: 200px;
-    height: 260px;
+    width: 240px;
+    overflow: hidden;
+    height: 300%;
     text-align: center;
     font-family: "Raleway", sans-serif;
-    /* color: #fff; */
     color: #a1a1a1;
     background-color: #1f2123;
-    border-radius: 10px;
+    border-radius: 4px;
     transition: transform 0.3s ease-in-out;
     /* border: 1px solid rgb(255, 255, 255); */
 }
 
 .restaurent-card:hover {
-    /* transform: scale(1.1); */
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
     transform: scale(1.05, 1.05);
 }
@@ -130,14 +133,29 @@ body {
     object-fit: cover;
 }
 
+.rating-locality {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.restaurant-rating {
+    background-color: #48C479;
+    color: #fff;
+    padding: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .restaurent-card h3 {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
+    color: #fff;
 }
 
 .restaurent-card h4 {
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 4px;
 
 }
@@ -149,12 +167,6 @@ body {
     gap: 20px;
     margin: 1rem;
     flex-wrap: wrap;
-}
-
-.rating-locality {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .footer {
@@ -193,9 +205,12 @@ body {
     color: #fff;
     height: 100vh;
 }
-.route-error-page h1,h2{
+
+.route-error-page h1,
+h2 {
     font-family: "Raleway", sans-serif;
 }
+
 .route-error-page h2 {
     font-size: 1.5rem;
     margin-bottom: 40px;
@@ -203,4 +218,76 @@ body {
 
 .route-error-page h1 {
     font-size: 2rem;
+}
+
+.about-us-container {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+    font-family: "Raleway", sans-serif;
+}
+
+.owner-list {
+    list-style: none;
+    padding: 0;
+}
+
+.owner-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.owner-item:hover {
+    background-color: #3a3f4b;
+    cursor: pointer;
+}
+
+.contact-us-container {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: #3a3f4b;
+    cursor: pointer;
+}
+
+.info-icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
