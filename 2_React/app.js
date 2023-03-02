@@ -6,7 +6,7 @@ import Footer from "./src/components/Footer";
 import About from "./src/components/About";
 import ErrorRoute from "./src/components/ErrorRoute";
 import ContactUs from "./src/components/ContactUs";
-import RestaurantMenu from  "./src/components/RestaurantMenu"
+import RestaurantMenu from "./src/components/RestaurantMenu";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 const AppLayout = () => {

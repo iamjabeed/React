@@ -3,9 +3,9 @@ import { useRouteError } from "react-router-dom";
 
 const ErrorRoute = () => {
   const err = useRouteError();
-//   console.log(err.error.message)
+  // console.log(err.error.message)
 //   console.log(err.status)
-//   console.log(err)
+  console.log(err)
 //   console.log(err.statusText)
   return (
     <div className="route-error-page">

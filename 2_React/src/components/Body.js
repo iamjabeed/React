@@ -3,7 +3,6 @@ import IMG_URL_CDN from "./constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
-
 const RestaurentCard = ({
   cloudinaryImageId,
   name,
@@ -16,13 +15,13 @@ const RestaurentCard = ({
     <div className="restaurent-card">
       <img src={IMG_URL_CDN + cloudinaryImageId} alt="food-image" />
       <div className="restaurant-details">
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{costForTwoString}</h4>
-      <div className="rating-locality">
-        <h4 className="restaurant-rating">{avgRating} ★</h4>
-        <h4>{locality}</h4>
-      </div>
+        <h3>{name}</h3>
+        <h4>{cuisines.join(", ")}</h4>
+        <h4>{costForTwoString}</h4>
+        <div className="rating-locality">
+          <h4 className="restaurant-rating">{avgRating} ★</h4>
+          <h4>{locality}</h4>
+        </div>
       </div>
     </div>
   );
@@ -86,6 +85,7 @@ const Body = () => {
       </div>
       <div className="restaurent-card-List">
         {filteredRestaurants.map((restaurent) => {
+          {/* console.log(restaurent.data); */}
           return (
             <RestaurentCard {...restaurent.data} key={restaurent.data.id} />
           );
