@@ -1,6 +1,15 @@
+//* Swiggy Restaurant menu list url
+
+export const MENU_ITEM_URL =
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=";
+
+// https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=
+
+//* Swiggy Restaurant list url
 const IMG_URL_CDN =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 export default IMG_URL_CDN;
+
 // export const RestaurentList = [
 //   {
 //     type: "restaurant",

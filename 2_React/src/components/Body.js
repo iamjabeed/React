@@ -2,6 +2,7 @@ import { RestaurentList } from "./constants";
 import IMG_URL_CDN from "./constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const RestaurentCard = ({
   cloudinaryImageId,
@@ -85,9 +86,19 @@ const Body = () => {
       </div>
       <div className="restaurent-card-List">
         {filteredRestaurants.map((restaurent) => {
-          {/* console.log(restaurent.data); */}
+          {
+            /* console.log(restaurent.data); */
+          }
+          {
+            /* console.log(restaurent.data.id); */
+          }
           return (
-            <RestaurentCard {...restaurent.data} key={restaurent.data.id} />
+            <Link
+              key={restaurent.data.id}
+              to={"/restaurant/" + restaurent.data.id}
+            >
+              <RestaurentCard {...restaurent.data} />
+            </Link>
           );
         })}
       </div>

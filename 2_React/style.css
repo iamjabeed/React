@@ -5,10 +5,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 body {
     background-color: #212426;
+}
+
+li,
+a {
+    list-style: none;
+    text-decoration: none;
 }
 
 .header {
@@ -290,4 +297,57 @@ h2 {
 .info-title {
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+.Restaurant-menu-container {
+
+    padding: 1rem;
+    /* color: #fff; */
+    color: #E1E1E1;
+}
+
+.Restaurant-menu-container .menu-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Restaurant-menu-container .menu-header img {
+    width: 300px;
+}
+
+/* font-family: "Roboto Slab", serif; */
+/* font-family: "Raleway", sans-serif; */
+.Restaurant-menu-container .menu-header h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+}
+
+.Restaurant-menu-container .menu-header p {
+    font-size: 14px;
+    /* font-family: "Roboto Slab", serif; */
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 10px;
+}
+
+.Restaurant-menu-container .menu-header h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+
+}
+
+.Restaurant-menu-container .menu-list-items {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Restaurant-menu-container .menu-list-items h1 {
+    color: #aeaeae;
 }
