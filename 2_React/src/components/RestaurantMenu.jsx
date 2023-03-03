@@ -39,10 +39,23 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <div className="menu-list-items">
-        <h1>Menu List</h1>
+        <h1>Full Menu List</h1>
         <ul>
           {Object.values(restaurantMenu?.menu?.items).map((item) => (
-            <li key={item.id}>{item.name}</li>
+            <div className="menu-items" key={item.id}>
+              <div className="description">
+                <li className="food-name">{item.name}</li>
+                <li>₹{item.price} in PAISE</li>
+                <li>{item.category}</li>
+              </div>
+              <div className="right-section-add-btn">
+                <img
+                  src={IMG_URL_CDN + item?.cloudinaryImageId}
+                  alt="food_img"
+                />
+                <button>Add</button>
+              </div>
+            </div>
           ))}
         </ul>
       </div>

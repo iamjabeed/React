@@ -310,10 +310,11 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .Restaurant-menu-container .menu-header img {
-    width: 300px;
+    width: 250px;
 }
 
 /* font-family: "Roboto Slab", serif; */
@@ -340,14 +341,86 @@ h2 {
 }
 
 .Restaurant-menu-container .menu-list-items {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
 }
 
 .Restaurant-menu-container .menu-list-items h1 {
-    color: #aeaeae;
+    font-size: 3rem;
+    letter-spacing: 0.9px;
+    background: linear-gradient(90deg,
+            rgb(232, 229, 236) 20%,
+            rgba(236, 231, 228, 0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    margin-bottom: 3rem;
+}
+
+.Restaurant-menu-container .menu-list-items ul li {
+    /* background-color: #17a4d6; */
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #1F2123;
+    /* border: 2px solid rgb(0, 8, 255); */
+    margin-bottom: 20px;
+    width: 80vw;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.145);
+    transition: all .2s ease-in-out;
+}
+
+/* .menu-items:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01, 1.01);
+} */
+
+.menu-items img {
+    width: 120px;
+}
+
+
+.menu-items .right-section-add-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.menu-items .right-section-add-btn button {
+    padding: 4px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.277);
+    transition: all .3s ease-in;
+    color: #48C479;
+}
+
+.menu-items .right-section-add-btn button:hover {
+    transform: translateY(-2px);
+}
+
+.menu-items .description li {
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    color: gray;
+}
+
+.menu-items .description .food-name {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    /* font-family: "Raleway", sans-serif; */
+    color: #fff;
 }
