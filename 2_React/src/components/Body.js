@@ -3,6 +3,8 @@ import IMG_URL_CDN from "./constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const RestaurentCard = ({
   cloudinaryImageId,
@@ -28,13 +30,6 @@ const RestaurentCard = ({
   );
 };
 
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
-
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -54,6 +49,23 @@ const Body = () => {
     //* Initial filtered reastaurants are all the restaurents
     setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
   }
+
+  const isOnline = useOnline();
+  const offLineStyle = {
+    // background: "white",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100vw",
+    height: "100vh",
+    fontFamily:"Arial",
+    fontSize:"2rem"
+  };
+  if (!isOnline)
+    return (
+      <h1 style={offLineStyle}>📍Offlin, Please Check your internet connection!!</h1>
+    );
 
   if (!allrestaurants) return null; //*Not rendered components(Early return)
 
@@ -86,12 +98,6 @@ const Body = () => {
       </div>
       <div className="restaurent-card-List">
         {filteredRestaurants.map((restaurent) => {
-          {
-            /* console.log(restaurent.data); */
-          }
-          {
-            /* console.log(restaurent.data.id); */
-          }
           return (
             <Link
               key={restaurent.data.id}

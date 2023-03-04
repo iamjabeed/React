@@ -59,11 +59,12 @@ a {
     font-size: 18px;
     text-transform: capitalize;
     font-family: "Roboto Slab", serif;
-    /* color: #ffffff; */
-    color: #a1a1a1;
+    /* color: #c00909; */
+    /* color: #a1a1a1; */
     font-weight: 500;
     cursor: pointer;
     transition: color .5s ease-in-out;
+    text-decoration: none;
 }
 
 .search_section {
