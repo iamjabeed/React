@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 import Footer from "./src/components/Footer";
@@ -7,8 +8,10 @@ import About from "./src/components/About";
 import ErrorRoute from "./src/components/ErrorRoute";
 import ContactUs from "./src/components/ContactUs";
 import RestaurantMenu from "./src/components/RestaurantMenu";
+// import Cooking from "./src/components/Cooking";
+import { lazy, Suspense } from "react";
 
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+const Cooking = lazy(() => import("./src/components/Cooking"));
 const AppLayout = () => {
   return (
     <>
@@ -44,6 +47,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cooking",
+        element: (
+          <Suspense fallback={<h1>Loding...</h1>}>
+            <Cooking />
+          </Suspense>
+        ),
       },
     ],
   },

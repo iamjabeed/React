@@ -27,6 +27,9 @@ const NavItems = () => {
         <li>
           <Link to="/contact">Contact Us</Link>
         </li>
+        <li>
+          <Link to="/cooking">Cooking</Link>
+        </li>
         <li>Cart</li>
       </ul>
     </div>

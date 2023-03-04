@@ -10,8 +10,8 @@ const ErrorRoute = () => {
   return (
     <div className="route-error-page">
       <h2>Something went wrong!!</h2>
-      <h1>{err.error.message}</h1>
-      <h1>{err.status+':'+err.statusText}</h1>
+      <h1>{err?.error?.message}</h1>
+      <h1>{err?.status+':'+err?.statusText}</h1>
     </div>
   );
 };
