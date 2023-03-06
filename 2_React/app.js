@@ -10,6 +10,7 @@ import ContactUs from "./src/components/ContactUs";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 // import Cooking from "./src/components/Cooking";
 import { lazy, Suspense } from "react";
+import Cart from "./src/components/Cart";
 
 const Cooking = lazy(() => import("./src/components/Cooking"));
 const AppLayout = () => {
@@ -55,6 +56,10 @@ const appRouter = createBrowserRouter([
             <Cooking />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

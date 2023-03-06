@@ -7,7 +7,7 @@ const Title = () => {
       <a href="/">
         <img
           className="logo"
-          src="https://cdn2.vectorstock.com/i/1000x1000/02/26/hot-grill-logo-design-vector-36330226.jpg"
+          src="https://png.pngtree.com/template/20191005/ourmid/pngtree-barbecue-fire-fork-spatula-logo-template-vector-badge-design-image_314297.jpg"
           alt="logo"
         />
       </a>
@@ -30,7 +30,9 @@ const NavItems = () => {
         <li>
           <Link to="/cooking">Cooking</Link>
         </li>
-        <li>Cart</li>
+        <li>
+          <Link to="/cart">Cart</Link>
+        </li>
       </ul>
     </div>
   );
