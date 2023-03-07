@@ -11,15 +11,17 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 // import Cooking from "./src/components/Cooking";
 import { lazy, Suspense } from "react";
 import Cart from "./src/components/Cart";
+import { Provider } from "react-redux";
+import store from "./src/utils/store";
 
 const Cooking = lazy(() => import("./src/components/Cooking"));
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 

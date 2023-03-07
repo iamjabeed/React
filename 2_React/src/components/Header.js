@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -15,29 +16,11 @@ const Title = () => {
     </div>
   );
 };
-const NavItems = () => {
-  return (
-    <div className="nav-items">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact Us</Link>
-        </li>
-        <li>
-          <Link to="/cooking">Cooking</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-      </ul>
-    </div>
-  );
-};
+// const NavItems = () => {
+//   return (
+
+//   );
+// };
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -46,12 +29,31 @@ const Header = () => {
   };
 
   const { user } = useContext(UserContext);
-  console.log(user);
-
+  // console.log(user);
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="header">
       <Title />
-      <NavItems />
+      <div className="nav-items">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/cooking">Cooking</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart- {cartItems.length}</Link>
+          </li>
+        </ul>
+      </div>
       <div className="login">
         <button className="login-btn" onClick={handleButtonClick}>
           {isLoggedIn ? "Logout" : "Login"}

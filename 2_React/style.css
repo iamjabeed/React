@@ -433,3 +433,54 @@ h2 {
         display: none;
     }
 }
+
+.food-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem;
+    flex-direction: column;
+}
+
+.cart-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: #1F2123;
+    font-family: "Roboto Slab", serif;
+    width: 140px;
+}
+
+.cart-items img {
+    width: 100px;
+}
+
+.cart-items h1 {
+    font-size: .5rem;
+    color: #E1E1E1;
+}
+
+.cart-items .food-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.clear-btn {
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 3rem;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: orangered;
+}
+
+.clear-btn {
+    background-position: right center;
+}

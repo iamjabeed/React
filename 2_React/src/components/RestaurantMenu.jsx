@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import IMG_URL_CDN from "./constants";
 import Shimmer from "./Shimmer";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 const RestaurantMenu = () => {
   const params = useParams();
   // console.log(params);
@@ -14,12 +16,17 @@ const RestaurantMenu = () => {
         params.id
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     setRestaurantMenu(json.data);
   }
   useEffect(() => {
     getMenuInfo();
   }, []);
+  const dispatch = useDispatch();
+
+  const addFoodItem = (item) => {
+    dispatch(addItem(item));
+  };
 
   if (!restaurantMenu) return <Shimmer />;
   return (
@@ -53,7 +60,7 @@ const RestaurantMenu = () => {
                   src={IMG_URL_CDN + item?.cloudinaryImageId}
                   alt="food_img"
                 />
-                <button>Add</button>
+                <button onClick={() => addFoodItem(item)}>Add</button>
               </div>
             </div>
           ))}
