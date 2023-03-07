@@ -45,7 +45,7 @@ const RestaurantMenu = () => {
             <div className="menu-items" key={item.id}>
               <div className="description">
                 <li className="food-name">{item.name}</li>
-                <li>₹{item.price} in PAISE</li>
+                <li>₹{item.price / 100}</li>
                 <li>{item.category}</li>
               </div>
               <div className="right-section-add-btn">

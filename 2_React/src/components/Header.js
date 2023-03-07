@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Title = () => {
   return (
@@ -43,6 +44,9 @@ const Header = () => {
   const handleButtonClick = () => {
     setIsLoggedIn(!isLoggedIn);
   };
+
+  const { user } = useContext(UserContext);
+  console.log(user);
 
   return (
     <div className="header">
