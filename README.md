@@ -1,4 +1,4 @@
-# React Library
+# React 
 ### What is React?
 > React is a open source javaScript Library to build single page user interfaces.
 ### Library vs Framework?
