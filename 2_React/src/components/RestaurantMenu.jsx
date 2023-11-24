@@ -12,11 +12,14 @@ const RestaurantMenu = () => {
 
   async function getMenuInfo() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=" +
-        params.id
+      //  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.956924&lng=77.701127&restaurantId="+
+      //   params.id
+
+      // "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.956924&lng=77.701127&restaurantId=" +
+      //   params.id
     );
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
     setRestaurantMenu(json.data);
   }
   useEffect(() => {
@@ -34,7 +37,7 @@ const RestaurantMenu = () => {
       <div className="menu-header">
         <div>
           <h1>{restaurantMenu?.name}</h1>
-          <p>{restaurantMenu?.cuisines.join(",")}</p>
+          <p>{restaurantMenu?.cuisines?.join(",")}</p>
           <h4>{restaurantMenu?.area}</h4>
           <h4>{restaurantMenu?.city}</h4>
         </div>
@@ -49,11 +52,11 @@ const RestaurantMenu = () => {
         <h1>Full Menu List</h1>
         <ul>
           {Object.values(restaurantMenu?.menu?.items).map((item) => (
-            <div className="menu-items" key={item.id}>
+            <div className="menu-items" key={item?.id}>
               <div className="description">
-                <li className="food-name">{item.name}</li>
-                <li>₹{item.price / 100}</li>
-                <li>{item.category}</li>
+                <li className="food-name">{item?.name}</li>
+                <li>₹{item?.price / 100}</li>
+                <li>{item?.category}</li>
               </div>
               <div className="right-section-add-btn">
                 <img
